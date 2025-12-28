@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Spatiotemporal Failure Prediction for Smart Grids",
+    "domain": "Energy Systems - Power Grid Reliability",
+    "technologies": "PyTorch, JAX, CUDA, Graph Neural Networks, Transformers, Signal Processing",
+    "description": "Designed topology-aware graph transformers for predicting power grid failures. Built multi-scale temporal feature pipeline capturing short and long-term patterns. Implemented CUDA optimizations reducing training time by 80%.",
+    "problem": "Power grid operators need early warning systems to prevent cascading failures and optimize maintenance schedules. Traditional methods struggle with sparse sensor data and complex spatial dependencies.",
+    "approach": [
+      "Designed topology-aware graph transformers that inject network structure into attention mechanisms for spatial failure propagation",
+      "Built multi-scale temporal feature pipeline (30s, 60s, 180s windows) capturing short and long-term patterns",
+      "Applied physics-informed constraints and focal loss to handle extreme class imbalance in failure events",
+      "Implemented CUDA optimizations reducing training time by 80% for real-time model updates"
+    ],
+    "impact": "Enables predictive maintenance workflows and critical asset ranking for grid operators. Demonstrated on Oklahoma G&E PMU data (2009-2022) covering real-world failure scenarios.",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "title": "Measurement-Free River Depth Recovery Using UAV Data",
+    "domain": "Water Resources - Bathymetry Inversion",
+    "technologies": "JAX, TensorFlow, HEC-RAS, QGIS, Tecplot, PINNs, Bayesian Inference",
+    "description": "Developed physics-informed neural networks solving Shiono-Knight Method PDEs to invert river depth profiles from UAV surface velocity data. Accelerated PINN training by 70% through GPU optimization.",
+    "problem": "Traditional river bathymetry surveys are costly, time-consuming, and dangerous in flood conditions. A non-invasive approach using surface velocity measurements could revolutionize flood modeling and channel design.",
+    "approach": [
+      "Developed physics-informed neural networks solving Shiono-Knight Method PDEs to invert river depth profiles from UAV surface velocity data",
+      "Integrated remote sensing data with PDE-constrained neural networks for measurement-free bathymetry estimation",
+      "Applied Bayesian uncertainty quantification and Polynomial Chaos Expansion for confidence intervals",
+      "Accelerated PINN training by 70% through GPU optimization in JAX"
+    ],
+    "impact": "Demonstrates feasibility of non-contact river characterization for R&D applications in flood risk assessment and hydraulic engineering. Currently in preparation for Water Resources Research (AGU).",
+    "status": "in-preparation"
+  }
+]

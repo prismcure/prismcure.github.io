@@ -1,0 +1,48 @@
+# docker-compose.yml - Orchestrates multiple Docker containers
+# Version 3.8 of docker-compose syntax
+version: '3.8'
+
+# Services - Each service is a container
+services:
+  # Backend service (Express API)
+  backend:
+    # Build from Dockerfile in ./backend directory
+    build: ./backend
+    # Container name (easier to reference)
+    container_name: prismcure-backend
+    # Port mapping: host:container
+    # localhost:3000 → container:3000
+    ports:
+      - "3000:3000"
+    # Volume mounting - sync code changes without rebuild
+    # host_path:container_path
+    volumes:
+      - ./backend:/app
+      # Don't sync node_modules (use container's version)
+      - /app/node_modules
+    # Environment variables
+    environment:
+      - NODE_ENV=development
+    # Restart policy
+    restart: unless-stopped
+
+  # Frontend service (React app)
+  frontend:
+    build: ./frontend
+    container_name: prismcure-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    # depends_on - start backend first, then frontend
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+# Optional: Define networks (containers can communicate)
+networks:
+  default:
+    name: prismcure-network

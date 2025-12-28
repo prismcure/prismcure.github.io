@@ -1,0 +1,1482 @@
+/* ========================================
+   PRISMCURE PROFESSIONAL WEBSITE STYLES
+   NDSU Colors: Green #00843D, Yellow #FFC72C
+   ======================================== */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure all sections maintain consistent width */
+section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Light Mode Styles */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #333333;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --text-primary: #ffffff;
+  --text-secondary: #ddd;
+  --border-color: #333;
+}
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ===== TAB NAVIGATION ===== */
+.tab-navigation {
+  background: linear-gradient(
+    135deg,
+    #00843d 0%,
+    #007a3d 50%,
+    #00572b 100%
+  ); /* NDSU Green gradient */
+  border-radius: 0;
+  margin: 0;
+  padding: 0.75rem 2rem;
+  border: none;
+  box-shadow: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: calc(100% - 4rem);
+  max-width: calc(1200px - 4rem);
+  box-sizing: border-box;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  position: relative;
+  font-family: inherit;
+  flex: 1 1 auto;
+  min-width: 120px;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-button:hover {
+  color: #fff;
+}
+
+.tab-button.active {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: #ffc72c;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transform: none;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HERO SECTION - CONDENSED ===== */
+.header {
+  text-align: center;
+  padding: 0 2rem 2.5rem 2rem;
+  padding-top: calc(3.5rem + 1rem); /* Space for fixed tabs */
+  background: linear-gradient(
+    135deg,
+    #00843d 0%,
+    #007a3d 50%,
+    #00572b 100%
+  ); /* NDSU Green gradient */
+  color: white;
+  border-radius: 0 0 16px 16px;
+  margin-top: 3.5rem; /* Match fixed tabs height */
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Circular Profile Photo */
+.profile-photo {
+  width: 150px; /* CIRCULAR size */
+  height: 150px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover;
+  object-position: center 20%; /* Focus on face */
+  border: 4px solid #ffc72c; /* NDSU Yellow border */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+  font-size: 3rem; /* REDUCED from 4rem */
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.75rem 0; /* REDUCED spacing */
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ffffff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-acronym {
+  font-size: 0.9rem; /* REDUCED from 1rem */
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  opacity: 0.95;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.acronym-highlight {
+  font-weight: 700;
+  color: #ffc72c; /* NDSU Yellow */
+  font-size: 1.1em;
+}
+
+.hero-divider {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffc72c, transparent);
+  margin: 1.5rem auto; /* REDUCED from 2rem */
+  border-radius: 2px;
+}
+
+.hero-name {
+  font-size: 1.75rem; /* REDUCED from 2rem */
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0; /* REDUCED spacing */
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1rem; /* REDUCED from 1.1rem */
+  margin: 0.5rem 0 1rem 0; /* REDUCED spacing */
+  color: #e0e7ff;
+  font-weight: 400;
+}
+
+.hero-tagline {
+  font-size: 1.05rem; /* REDUCED from 1.15rem */
+  line-height: 1.7;
+  margin: 1rem auto 0 auto; /* REDUCED spacing */
+  max-width: 750px;
+  color: #f0f4ff;
+  font-weight: 300;
+  padding: 1.25rem; /* REDUCED from 1.5rem */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #ffc72c; /* NDSU Yellow */
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.about h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.about-intro {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #333;
+}
+
+.about-intro .hero-name {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.about-intro .hero-subtitle {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem 0;
+  color: #ffc72c; /* NDSU Yellow */
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.about h3 {
+  color: #ffc72c; /* NDSU Yellow */
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.about h4 {
+  color: #ffc72c;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.about p {
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.research-list li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.research-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #00843d; /* NDSU Green */
+  font-weight: bold;
+}
+
+.research-list strong {
+  color: #ffc72c; /* NDSU Yellow */
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.pillar {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #00843d; /* NDSU Green */
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.pillar:hover {
+  transform: translateY(-5px);
+  border-left-color: #ffc72c; /* NDSU Yellow */
+}
+
+.pillar h4 {
+  margin-top: 0;
+}
+
+.pillar p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ===== LATEST POSTS ===== */
+.latest-posts {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.latest-posts h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-item {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #00843d;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.post-item:hover {
+  transform: translateX(5px);
+  border-left-color: #ffc72c;
+}
+
+.post-date {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.post-title {
+  margin: 0 0 0.75rem 0;
+}
+
+.post-title a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.post-title a:hover {
+  color: #ffc72c; /* NDSU Yellow */
+  text-decoration: underline;
+}
+
+.post-excerpt {
+  color: #ddd;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ===== RESEARCH APPLICATIONS ===== */
+.research-apps-section {
+  margin-bottom: 3rem;
+}
+
+.research-apps-section h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.application {
+  background: #242424;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #444;
+}
+
+.application:last-child {
+  margin-bottom: 0;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.app-badge {
+  background: linear-gradient(135deg, #00843d, #007a3d); /* NDSU Green */
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.app-domain {
+  color: #ffc72c; /* NDSU Yellow */
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.application h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.app-content {
+  margin-top: 1.5rem;
+}
+
+.app-block {
+  margin-bottom: 1.5rem;
+}
+
+.app-block h4 {
+  color: #ffc72c; /* NDSU Yellow */
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.app-block p {
+  color: #ddd;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.app-block ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.app-block li {
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.tech-stack-badge {
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #ffc72c; /* NDSU Yellow */
+  margin-top: 1.5rem;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.tech-stack-badge strong {
+  color: #ffc72c;
+}
+
+/* ===== PUBLICATIONS - SIMPLIFIED ===== */
+.publications {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.publications h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+/* Removed pub-category styles */
+
+.pub-item {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #00843d; /* NDSU Green */
+  margin-bottom: 1rem;
+}
+
+.pub-authors {
+  color: #ffc72c; /* NDSU Yellow */
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+.pub-title {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Publication Title Links */
+.pub-title a {
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.pub-title a:hover {
+  color: #ffc72c; /* NDSU Yellow on hover */
+  text-decoration: underline;
+}
+
+.pub-venue {
+  color: #999;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.pub-venue em {
+  color: #ffc72c; /* NDSU Yellow */
+}
+
+.pub-summary {
+  background: #242424;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #666;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pub-summary p {
+  color: #999;
+  margin: 0;
+  font-style: italic;
+}
+
+.pub-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #00843d, #007a3d); /* NDSU Green */
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #e0e7ff;
+  margin-top: 0.5rem;
+}
+
+/* ===== TECHNICAL SKILLS ===== */
+.technical-skills {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.technical-skills h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 3px solid #ffc72c; /* NDSU Yellow */
+  transition: transform 0.2s;
+}
+
+.skill-category:hover {
+  transform: translateY(-3px);
+}
+
+.skill-category h4 {
+  color: #ffc72c;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.skill-category p {
+  color: #ddd;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tool-group p {
+  margin-bottom: 0.75rem;
+}
+
+.tool-group strong {
+  color: #00843d; /* NDSU Green */
+}
+
+/* ===== CV ===== */
+.cv {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.cv-intro {
+  color: #ddd;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.cv h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.cv h2:first-of-type {
+  margin-top: 0;
+}
+
+.cv-section {
+  margin-bottom: 2.5rem;
+}
+
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.cv-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #333;
+  color: #ddd;
+}
+
+.cv-table td:first-child {
+  width: 120px;
+  color: #ffc72c; /* NDSU Yellow */
+  font-weight: 600;
+}
+
+.cv-table td a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cv-table td a:hover {
+  color: #ffc72c;
+  text-decoration: underline;
+}
+
+.cv-item {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ffc72c; /* NDSU Yellow */
+  margin-bottom: 1.5rem;
+}
+
+.cv-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cv-date {
+  color: #ffc72c; /* NDSU Yellow */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.cv-location {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.cv-item h3 {
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.cv-institution {
+  color: #00843d; /* NDSU Green */
+  font-size: 1.05rem;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.cv-field {
+  color: #ddd;
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.cv-details {
+  color: #ddd;
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== EDUCATION (for Teaching) ===== */
+.education {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.education h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.edu-item {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ffc72c; /* NDSU Yellow */
+  margin-bottom: 1.5rem;
+}
+
+.edu-item:last-child {
+  margin-bottom: 0;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.edu-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.edu-year {
+  color: #ffc72c; /* NDSU Yellow */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.edu-institution {
+  color: #00843d; /* NDSU Green */
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.edu-focus,
+.edu-advisor,
+.edu-honors {
+  color: #ddd;
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.edu-focus strong {
+  color: #ffc72c;
+}
+
+/* ===== AWARDS ===== */
+.awards {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.awards h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.award-item {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ffc72c; /* NDSU Yellow */
+  margin-bottom: 1.5rem;
+}
+
+.award-item:last-child {
+  margin-bottom: 0;
+}
+
+.award-item h4 {
+  color: #ffc72c;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.award-item p {
+  color: #ddd;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== TEACHING ===== */
+.teaching {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.teaching h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.teaching .cv-item {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ffc72c; /* NDSU Yellow */
+  margin-bottom: 1.5rem;
+}
+
+.teaching .cv-item:last-child {
+  margin-bottom: 0;
+}
+
+.teaching .cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.teaching .cv-date {
+  color: #ffc72c; /* NDSU Yellow */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.teaching .cv-location {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.teaching .cv-item h3 {
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.teaching .cv-institution {
+  color: #00843d; /* NDSU Green */
+  font-size: 1.05rem;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.teaching .cv-field {
+  color: #ddd;
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.teaching .cv-details {
+  color: #ddd;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  padding: 1.5rem 0;
+  margin: 1.5rem 0 0 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #00843d, #ffc72c);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 4px;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffc72c;
+  border: 3px solid #00843d;
+  box-shadow: 0 0 0 3px rgba(0, 132, 61, 0.2);
+  z-index: 1;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border-left: 3px solid #00843d;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timeline-content:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: #ffc72c;
+  transform: translateX(5px);
+}
+
+.timeline-date {
+  color: #ffc72c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.timeline-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ===== OUTREACH ===== */
+.outreach {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.outreach h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.outreach-intro {
+  color: #ffc72c; /* NDSU Yellow */
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.outreach-item {
+  background: #242424;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #00843d; /* NDSU Green */
+  margin-bottom: 1.5rem;
+}
+
+.outreach-item:last-child {
+  margin-bottom: 0;
+}
+
+.outreach-item h4 {
+  color: #ffc72c;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.outreach-item p {
+  color: #ddd;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== BLOG ===== */
+.blog {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.blog h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.blog-intro {
+  color: #ddd;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.contact h2 {
+  color: #00843d; /* NDSU Green */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #00843d;
+  padding-bottom: 0.5rem;
+}
+
+.contact-content {
+  width: 100%;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #242424;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+  border-left: 3px solid #00843d;
+}
+
+.contact-item:hover {
+  background: #2a2a2a;
+  border-left-color: #ffc72c;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+.contact-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: #ffc72c; /* NDSU Yellow */
+}
+
+.contact-item span:not(.contact-icon) {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* ===== ERROR STATES ===== */
+.error {
+  color: #ff6b6b;
+  padding: 1rem;
+  background: #2a1a1a;
+  border: 1px solid #ff6b6b;
+  border-radius: 4px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .header {
+    padding: 2rem 1rem; /* Already condensed */
+  }
+
+  .profile-photo {
+    width: 120px; /* Smaller on mobile */
+    height: 120px;
+  }
+
+  .hero-title {
+    font-size: 2rem; /* Smaller on mobile */
+  }
+
+  .hero-name {
+    font-size: 1.4rem;
+  }
+
+  .hero-acronym {
+    font-size: 0.85rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  .header {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .tab-navigation {
+    padding: 0.75rem 0.25rem;
+    margin: -1rem -1rem 1.5rem -1rem;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .tab-container {
+    gap: 0.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tab-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    flex: 1;
+    min-width: 100px;
+    white-space: nowrap;
+  }
+
+  .contact-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about,
+  .research-apps,
+  .publications,
+  .technical-skills,
+  .education,
+  .awards,
+  .teaching,
+  .outreach,
+  .contact {
+    padding: 1.5rem;
+  }
+
+  .pillars,
+  .skills-grid,
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header,
+  .edu-header,
+  .teaching-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pub-stats {
+    flex-direction: column;
+  }
+
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding: 1rem 0;
+  }
+
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    padding-left: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .timeline-marker {
+    left: 2px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-content {
+    padding: 0.875rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .timeline-date {
+    font-size: 0.85rem;
+    align-self: flex-end;
+  }
+
+  .timeline-title {
+    font-size: 0.95rem;
+  }
+
+  .cv-table {
+    font-size: 0.9rem;
+  }
+
+  .cv-table td:first-child {
+    width: 100px;
+  }
+
+  .cv-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tab-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ===== LIGHT MODE STYLES ===== */
+[data-theme="light"] {
+  background-color: #f5f5f5;
+}
+
+[data-theme="light"] .about,
+[data-theme="light"] .publications,
+[data-theme="light"] .cv,
+[data-theme="light"] .teaching,
+[data-theme="light"] .contact,
+[data-theme="light"] .technical-skills,
+[data-theme="light"] .outreach,
+[data-theme="light"] .blog,
+[data-theme="light"] .latest-posts {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #1a1a1a;
+}
+
+[data-theme="light"] .about h2,
+[data-theme="light"] .publications h2,
+[data-theme="light"] .cv h2,
+[data-theme="light"] .teaching h2,
+[data-theme="light"] .contact h2,
+[data-theme="light"] .technical-skills h2,
+[data-theme="light"] .outreach h2,
+[data-theme="light"] .blog h2,
+[data-theme="light"] .latest-posts h2 {
+  color: #00843d;
+  border-bottom-color: #00843d;
+}
+
+[data-theme="light"] .about h3,
+[data-theme="light"] .about h4,
+[data-theme="light"] .cv-item h3,
+[data-theme="light"] .edu-item h3,
+[data-theme="light"] .award-item h4,
+[data-theme="light"] .outreach-item h4,
+[data-theme="light"] .skill-category h4 {
+  color: #ffc72c;
+}
+
+[data-theme="light"] .about p,
+[data-theme="light"] .cv-details,
+[data-theme="light"] .edu-focus,
+[data-theme="light"] .award-item p,
+[data-theme="light"] .outreach-item p,
+[data-theme="light"] .skill-category p,
+[data-theme="light"] .post-excerpt {
+  color: #333333;
+}
+
+[data-theme="light"] .cv-item,
+[data-theme="light"] .edu-item,
+[data-theme="light"] .award-item,
+[data-theme="light"] .outreach-item,
+[data-theme="light"] .skill-category,
+[data-theme="light"] .pillar,
+[data-theme="light"] .application,
+[data-theme="light"] .pub-item,
+[data-theme="light"] .post-item,
+[data-theme="light"] .timeline-content {
+  background: #f5f5f5;
+  border-left-color: #00843d;
+}
+
+[data-theme="light"] .contact-item {
+  background: #f5f5f5;
+  border-left-color: #00843d;
+}
+
+[data-theme="light"] .contact-item a,
+[data-theme="light"] .contact-item span {
+  color: #1a1a1a;
+}
