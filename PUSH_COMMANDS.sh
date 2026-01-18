@@ -21,3 +21,4 @@ echo "   1. Go to Settings → Pages"
 echo "   2. Source: Select 'GitHub Actions'"
 echo "   3. Your site will be at: https://prismcure.github.io"
 
+

@@ -1233,43 +1233,55 @@ section {
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
   .app {
-    padding: 1rem;
+    padding: 0.75rem;
+    padding-top: 0.5rem;
   }
 
   .header {
-    padding: 2rem 1rem; /* Already condensed */
+    padding: 0.5rem 1rem 2rem 1rem;
+    padding-top: calc(4rem + 0.5rem);
+    margin-top: 4rem;
+    border-radius: 0 0 12px 12px;
   }
 
   .profile-photo {
-    width: 120px; /* Smaller on mobile */
-    height: 120px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
   }
 
   .hero-title {
-    font-size: 2rem; /* Smaller on mobile */
+    font-size: 1.75rem;
+    letter-spacing: 0.05em;
   }
 
   .hero-name {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
   }
 
   .hero-acronym {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .hero-acronym > span {
+    font-size: 1em !important;
   }
 
   .hero-tagline {
-    font-size: 0.95rem;
-    padding: 1rem;
-  }
-
-  .header {
-    padding: 0 1rem 2rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.75rem;
   }
 
   .tab-navigation {
-    padding: 0.75rem 0.25rem;
-    margin: -1rem -1rem 1.5rem -1rem;
-    border-radius: 12px 12px 0 0;
+    padding: 0.5rem;
+    width: 100%;
+    left: 0;
+    transform: none;
+    max-width: 100%;
+    min-height: auto;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .tab-container {
@@ -1278,6 +1290,10 @@ section {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 0.25rem;
   }
 
   .tab-container::-webkit-scrollbar {
@@ -1285,15 +1301,25 @@ section {
   }
 
   .tab-button {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-    flex: 1;
-    min-width: 100px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    flex: 0 0 auto;
+    min-width: auto;
     white-space: nowrap;
   }
 
+  .theme-toggle {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    margin: 0;
+    font-size: 1rem;
+    min-width: 2rem;
+    height: 2rem;
+  }
+
   .contact-links {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .about,
@@ -1304,14 +1330,49 @@ section {
   .awards,
   .teaching,
   .outreach,
-  .contact {
-    padding: 1.5rem;
+  .contact,
+  .blog,
+  .latest-posts {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .about h2,
+  .publications h2,
+  .cv h2,
+  .teaching h2,
+  .contact h2,
+  .technical-skills h2,
+  .outreach h2,
+  .blog h2,
+  .latest-posts h2 {
+    font-size: 1.25rem;
+  }
+
+  .about h3 {
+    font-size: 1.1rem;
+  }
+
+  .about p,
+  .pillar p,
+  .outreach-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .pillars,
   .skills-grid,
   .contact-links {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pillar {
+    padding: 1rem;
+  }
+
+  .pillar h4 {
+    font-size: 0.95rem;
   }
 
   .app-header,
@@ -1349,59 +1410,134 @@ section {
   }
 
   .timeline-content {
-    padding: 0.875rem 1rem;
+    padding: 0.75rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
 
   .timeline-date {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     align-self: flex-end;
   }
 
   .timeline-title {
-    font-size: 0.95rem;
-  }
-
-  .cv-table {
     font-size: 0.9rem;
   }
 
+  .cv-table {
+    font-size: 0.85rem;
+  }
+
   .cv-table td:first-child {
-    width: 100px;
+    width: 80px;
   }
 
   .cv-item-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .cv-item h3,
+  .edu-item h3 {
+    font-size: 1rem;
+  }
+
+  .cv-institution,
+  .cv-details,
+  .cv-field {
+    font-size: 0.85rem;
+  }
+
+  .contact-item {
+    padding: 0.75rem;
+  }
+
+  .contact-item a,
+  .contact-item span {
+    font-size: 0.9rem;
+  }
+
+  .post-item {
+    padding: 1rem;
+  }
+
+  .post-title {
+    font-size: 1rem;
+  }
+
+  .post-excerpt {
+    font-size: 0.85rem;
+  }
+
+  .skill-category {
+    padding: 1rem;
+  }
+
+  .skill-category h4 {
+    font-size: 1rem;
+  }
+
+  .outreach-item {
+    padding: 1rem;
+  }
+
+  .outreach-item h4 {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .app {
+    padding: 0.5rem;
+  }
+
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .profile-photo {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-acronym {
+    font-size: 0.65rem;
   }
 
   .tab-button {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-    flex: 1;
-    min-width: 80px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
   }
 
-  .contact-links {
-    grid-template-columns: 1fr;
+  .about,
+  .publications,
+  .cv,
+  .teaching,
+  .contact,
+  .technical-skills,
+  .outreach,
+  .blog,
+  .latest-posts {
+    padding: 1rem;
   }
 
   .cv-button {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .about-intro {
+    margin-bottom: 1rem;
+  }
+
+  .hero-name {
+    font-size: 1.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
   }
 }
 
